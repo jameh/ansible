@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+  - name: install syncthing
+    package:
+      name: syncthing
+
+# vim: set sw=2 expandtab:
