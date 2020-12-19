@@ -4,8 +4,11 @@
   become: true
 
   tasks:
-  - name: install syncthing
+  - name: install packages
     package:
-      name: syncthing
+      name:
+        - base-devel
+        - syncthing
+        - tmux
 
 # vim: set sw=2 expandtab:
