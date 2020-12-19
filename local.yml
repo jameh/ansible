@@ -10,5 +10,11 @@
         - base-devel
         - syncthing
         - tmux
+  - name: add ansible-pull cron job
+    cron:
+      name: ansible auto-provision
+      user: root
+      minute: "*/10"
+      job: ansible-pull -o -U https://github.com/jameh/ansible.git
 
 # vim: set sw=2 expandtab:
