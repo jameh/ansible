@@ -10,6 +10,7 @@
         - base-devel
         - syncthing
         - tmux
+        - cronie
   - name: add ansible-pull cron job
     cron:
       name: ansible auto-provision
