@@ -1,0 +1,8 @@
+- name: Packages
+  import_tasks: packages.yml
+
+- name: Dotfiles
+  import_tasks: dotfiles.yml
+
+- name: Cron auto-updating
+  import_tasks: cron.yml

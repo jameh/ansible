@@ -1,0 +1,18 @@
+- name: dotfile directories exist
+  file:
+    path: '~/.{{ item }}'
+    state: directory
+  loop:
+    - config
+
+- name: dotfiles are linked
+  file:
+    src: '{{ ansible_env.PWD }}/files/dotfiles/{{ item }}'
+    path: '~/.{{ item }}'
+    state: link
+  loop:
+    - gitconfig
+    - tmux.conf
+    - zshrc
+
+# vim: set sw=2 expandtab:
