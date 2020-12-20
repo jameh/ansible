@@ -3,19 +3,15 @@
   connection: local
   become: true
 
+  pre_tasks:
+    - name: update repositories
+      package:
+        update_cache: yes
+      changed_when: False
+
   tasks:
-  - name: install packages
-    package:
-      name:
-        - base-devel
-        - syncthing
-        - tmux
-        - cronie
-  - name: add ansible-pull cron job
-    cron:
-      name: ansible auto-provision
-      user: root
-      minute: "*/10"
-      job: ansible-pull -o -U https://github.com/jameh/ansible.git
+    - include: tasks/packages.yml
+    - include: tasks/cron.yml
+
 
 # vim: set sw=2 expandtab:
