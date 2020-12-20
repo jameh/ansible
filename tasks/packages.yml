@@ -5,3 +5,4 @@
       - syncthing
       - tmux
       - cronie
+  become: yes

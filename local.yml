@@ -1,12 +1,12 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
 
   pre_tasks:
     - name: Refreshing Repositories
       package:
         update_cache: yes
+      become: yes
       changed_when: False
 
   tasks:
