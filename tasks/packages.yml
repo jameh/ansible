@@ -1,0 +1,7 @@
+- name: install packages
+  package:
+    name:
+      - base-devel
+      - syncthing
+      - tmux
+      - cronie
