@@ -1,11 +1,11 @@
-- name: Creating dotfile directories
+- name: Creating Dotfile Directories
   file:
     path: '~/.{{ item }}'
     state: directory
   loop:
     - config
 
-- name: Linking dotfiles
+- name: Linking Dotfiles
   file:
     src: '{{ ansible_env.PWD }}/files/dotfiles/{{ item }}'
     path: '~/.{{ item }}'

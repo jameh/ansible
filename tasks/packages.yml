@@ -1,4 +1,4 @@
-- name: install packages
+- name: Installing Packages
   package:
     name:
       - base-devel
