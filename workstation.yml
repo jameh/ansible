@@ -1,0 +1,14 @@
+---
+- hosts: laptops
+  become: true
+
+  tasks:
+  - name: install packages
+    package:
+      name:
+        - base-devel
+        - syncthing
+        - tmux
+        - cronie
+
+# vim: set sw=2 expandtab:
