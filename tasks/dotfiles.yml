@@ -1,11 +1,11 @@
-- name: dotfile directories exist
+- name: Creating dotfile directories
   file:
     path: '~/.{{ item }}'
     state: directory
   loop:
     - config
 
-- name: dotfiles are linked
+- name: Linking dotfiles
   file:
     src: '{{ ansible_env.PWD }}/files/dotfiles/{{ item }}'
     path: '~/.{{ item }}'
