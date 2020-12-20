@@ -105,12 +105,11 @@ _systemctl_unit_state() {
 
 # plugins
 # check if zplug is installed
-if [[ ! -d "$ZPLUG_HOME" ]]; then
-    git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
-    source "$ZPLUG_HOME"/init.zsh && zplug update
+if [[ ! -d "$HOME/.zplug" ]]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
-source "$ZPLUG_HOME"/init.zsh
+source "$HOME/.zplug"/init.zsh
 
 # interactive git commands
 zplug "zsh-users/zsh-syntax-highlighting"
