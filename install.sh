@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-ansible-playbook --ask-become-pass local.yml
+ansible-playbook -v -t install --ask-become-pass local.yml

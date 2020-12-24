@@ -9,7 +9,12 @@
       - syncthing
       - tmux
       - cronie
+      - pkgfile
+      - man-db
+      - alacritty
   become: yes
+  tags:
+    - install
 
 - name: Creating ~/.local/src
   file:
