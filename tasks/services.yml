@@ -1,0 +1,15 @@
+- name: Enable / Start lightdm
+  service:
+    name: lightdm
+    enabled: yes
+    state: started
+  become: yes
+
+- name: Enable / Start udevmon
+  service:
+    name: udevmon
+    enabled: yes
+    state: started
+  become: yes
+
+# vim: set sw=2 expandtab:

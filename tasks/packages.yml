@@ -2,7 +2,31 @@
   package:
     name:
       - base-devel
+      - bspwm
+      - lightdm
+      - lightdm-gtk-greeter
+      - xorg-server
       - syncthing
       - tmux
       - cronie
   become: yes
+
+- name: Creating ~/.local/src
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.local/src"
+    state: directory
+
+- name: Cloning yay
+  git:
+    repo: 'https://aur.archlinux.org/yay.git'
+    dest: "{{ lookup('env', 'HOME') }}/.local/src/yay"
+
+- name: Building and Installing yay
+  command: chdir="{{ lookup('env', 'HOME') }}/.local/src/yay" makepkg -si --noconfirm
+
+- name: Installing AUR Packages
+  command: yay -S {{ item }} --noconfirm
+  loop:
+    - interception-caps2esc
+
+# vim: set sw=2 expandtab:

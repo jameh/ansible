@@ -4,6 +4,7 @@
     state: directory
   loop:
     - config
+    - config/bspwm
 
 - name: Linking Dotfiles
   file:
@@ -11,8 +12,21 @@
     path: '~/.{{ item }}'
     state: link
   loop:
+    - config/bspwm/bspwmrc
     - gitconfig
     - tmux.conf
     - zshrc
+
+- name: Copying /etc Config Files
+  copy:
+    src: '{{ ansible_env.PWD }}/files/etc/{{ item }}'
+    dest: '/etc/{{ item }}'
+    owner: root
+    group: root
+    mode: '0644'
+  loop:
+    - X11/Xkbmap
+    - interception/udevmon.d/caps2esc.yaml
+  become: yes
 
 # vim: set sw=2 expandtab:

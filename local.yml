@@ -12,6 +12,7 @@
   tasks:
     - include: tasks/packages.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/services.yml
     - include: tasks/cron.yml
 
 
