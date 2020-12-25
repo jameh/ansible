@@ -3,6 +3,7 @@
     name:
       - base-devel
       - bspwm
+      - sxhkd
       - lightdm
       - lightdm-gtk-greeter
       - xorg-server
@@ -12,6 +13,8 @@
       - pkgfile
       - man-db
       - alacritty
+      - chromium
+      - arch-wiki-lite
   become: yes
   tags:
     - install

@@ -5,6 +5,10 @@
   loop:
     - config
     - config/bspwm
+    - config/sxhkd
+    - config/systemd
+  tags:
+    - dots
 
 - name: Linking Dotfiles
   file:
@@ -13,9 +17,13 @@
     state: link
   loop:
     - config/bspwm/bspwmrc
+    - config/sxhkd/sxhkdrc
+    - config/systemd/user
     - gitconfig
     - tmux.conf
     - zshrc
+  tags:
+    - dots
 
 - name: Copying /etc Config Files
   copy:
@@ -25,7 +33,7 @@
     group: root
     mode: '0644'
   loop:
-    - X11/Xkbmap
+    - X11/xorg.conf.d/20-keyboard.conf
     - interception/udevmon.d/caps2esc.yaml
   become: yes
 
