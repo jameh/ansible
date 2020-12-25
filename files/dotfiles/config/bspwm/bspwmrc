@@ -30,7 +30,5 @@ bspc rule -a "Steam" desktop='focused:^4'
 bspc rule -a '*' state=pseudo_tiled center=true
 #bspc rule -a "*:scratchpad" state=floating
 
-if ! systemctl --user --quiet is-active bspwm.target; then
-    systemctl --user restart bspwm.target
-fi
+systemctl --user restart bspwm.target
 
