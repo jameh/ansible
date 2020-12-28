@@ -7,6 +7,8 @@
     - config/bspwm
     - config/sxhkd
     - config/systemd
+    - config/alacritty
+    - tmux
   tags:
     - dots
 
@@ -19,6 +21,8 @@
     - config/bspwm/bspwmrc
     - config/sxhkd/sxhkdrc
     - config/systemd/user
+    - config/alacritty/alacritty.yml
+    - local/lib
     - gitconfig
     - tmux.conf
     - zshrc

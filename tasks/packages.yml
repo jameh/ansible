@@ -1,6 +1,7 @@
 - name: Installing Packages
   package:
     name:
+      - alsa-utils
       - base-devel
       - bspwm
       - sxhkd
@@ -15,6 +16,10 @@
       - alacritty
       - chromium
       - arch-wiki-lite
+      - rofi
+      - noto-fonts
+      - noto-fonts-emoji
+      - noto-fonts-cjk
   become: yes
   tags:
     - install
@@ -36,5 +41,6 @@
   command: yay -S {{ item }} --noconfirm
   loop:
     - interception-caps2esc
+    - nerd-fonts-droid-sans-mono
 
 # vim: set sw=2 expandtab:

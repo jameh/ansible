@@ -39,7 +39,7 @@ XF86AudioPlay
 
 # rofi
 mod1 + space
-	"$XDG_CONFIG_HOME/rofi/launcher.sh"
+	"$HOME/.config/rofi/launcher.sh"
 
 # web
 mod1 + w
@@ -49,10 +49,12 @@ mod1 + alt + w
 	chromium --incognito
 
 # terminal / tmux
+mod1 + ctrl + Return
+	alacritty -d 105 45
 mod1 + Return
-	alacritty -d 105 45 -e tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf" new
+	alacritty -d 105 45 -e tmux new
 mod1 + alt + Return
-	alacritty -d 100 45 -e tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf" attach
+	alacritty -d 100 45 -e tmux attach
 mod1 + alt + BackSpace
 	"$HOME/.local/bin/lock.sh"
 mod1 + d
@@ -68,7 +70,7 @@ alt + t
 	tdrop current
 
 alt + space
-	"$XDG_CONFIG_HOME/rofi/launcher.sh"
+	"$HOME/.config/rofi/launcher.sh"
 
 # screenshot
 {alt + ,@}Print
