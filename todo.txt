@@ -1,0 +1,2 @@
+- make zsh prompt faster, fix missing character
+- make yay and aur only build once
